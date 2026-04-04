@@ -1,10 +1,145 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpw2s50wwe7tc"]
+[gd_scene load_steps=9 format=3 uid="uid://bpw2s50wwe7tc"]
 
-[ext_resource type="Texture2D" uid="uid://bnp5wvljd2uek" path="res://icon.svg" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://b68x2gwrxdgfk" path="res://Player/Player.tscn" id="2_wt17y"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_rupst"]
+offsets = PackedFloat32Array(0, 0.021875, 0.7375)
+colors = PackedColorArray(1, 1, 1, 1, 0.07499999, 0.07499999, 0.07499999, 1, 0, 0, 0, 1)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(643, 519)
-scale = Vector2(6.2421875, 6.1601563)
-texture = ExtResource("1_rupst")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wt17y"]
+gradient = SubResource("Gradient_rupst")
+width = 32
+height = 32
+fill_to = Vector2(1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m8u5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is3ju"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_wt17y"]
+offsets = PackedFloat32Array(0, 0.020833334, 0.27916667)
+colors = PackedColorArray(0, 0, 0, 1, 0.22744751, 0.5294037, 0.99606323, 1, 0.45489502, 0.65489197, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m8u5f"]
+gradient = SubResource("Gradient_wt17y")
+width = 32
+height = 32
+fill_from = Vector2(0.528125, 1)
+fill_to = Vector2(0.528125, 0.009375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rupst"]
+size = Vector2(32, 32)
+
+[node name="PlayGround" type="Node2D"]
+position = Vector2(9, 1)
+metadata/_edit_vertical_guides_ = [2337.0]
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(570, 678.00006)
+scale = Vector2(35.624996, 5.1338916)
+texture = SubResource("GradientTexture2D_wt17y")
+flip_h = true
+flip_v = true
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="Ground3" type="Sprite2D" parent="."]
+position = Vector2(385, 684)
+rotation = 0.43633232
+scale = Vector2(11.313266, 5.6574674)
+texture = SubResource("GradientTexture2D_wt17y")
+flip_h = true
+flip_v = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(920, 614)
+scale = Vector2(4.926881, 5.1100664)
+texture = SubResource("GradientTexture2D_wt17y")
+flip_h = true
+flip_v = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(-0.009762052, 0.03728695)
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="Ground4" type="Sprite2D" parent="."]
+position = Vector2(129.49998, 596)
+scale = Vector2(8.093749, 4.443021)
+texture = SubResource("GradientTexture2D_wt17y")
+flip_h = true
+flip_v = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="Wall1" type="Sprite2D" parent="."]
+position = Vector2(-79.000015, 403)
+scale = Vector2(7.9375005, 25.076857)
+texture = SubResource("GradientTexture2D_wt17y")
+region_rect = Rect2(32, 32, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall1"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1/StaticBody2D"]
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+position = Vector2(1214, 459)
+scale = Vector2(5.0952997, 28.686066)
+texture = SubResource("GradientTexture2D_wt17y")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall2"]
+physics_material_override = SubResource("PhysicsMaterial_m8u5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_is3ju")
+
+[node name="OneWayPlatform" type="Sprite2D" parent="."]
+position = Vector2(690, 516)
+scale = Vector2(4.3789167, 0.6986152)
+texture = SubResource("GradientTexture2D_m8u5f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
+scale = Vector2(1.0000001, 1.0000001)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D"]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_rupst")
+one_way_collision = true
+
+[node name="Player" parent="." instance=ExtResource("2_wt17y")]
+texture_filter = 1
+position = Vector2(406, 338)
+collision_layer = 0
+collision_mask = 3
+up_direction = Vector2(1.4975483e-09, -1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
