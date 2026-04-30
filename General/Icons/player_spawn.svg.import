@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxr2848scwlg4"
-path="res://.godot/imported/state.svg-408d035e0e248c57c06253f5f2530018.ctex"
+uid="uid://bfn15chwv5fmh"
+path="res://.godot/imported/player_spawn.svg-c9f3184c47e16432710f9851a1e88141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MetroidVania/state.svg"
-dest_files=["res://.godot/imported/state.svg-408d035e0e248c57c06253f5f2530018.ctex"]
+source_file="res://General/Icons/player_spawn.svg"
+dest_files=["res://.godot/imported/player_spawn.svg-c9f3184c47e16432710f9851a1e88141.ctex"]
 
 [params]
 

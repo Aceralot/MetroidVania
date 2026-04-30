@@ -8,11 +8,29 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="MetroidVania"
-run/main_scene="res://playground.tscn"
+run/main_scene="res://Levels/00_Forest/01.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
+
+[autoload]
+
+SceneManager="*res://00_global/scene_manager/scene_manager.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+player=""
 
 [input]
 
@@ -50,10 +68,15 @@ crouch={
 ])
 }
 
+[input_devices]
+
+virtual_controller/ios/enable_controller=true
+
 [layer_names]
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="One Way Platform"
+2d_physics/layer_5="Player"
 
 [physics]
 
@@ -67,23 +90,22 @@ renderer/rendering_method="mobile"
 
 project/editorState=[{
 "column": 0,
-"line": 10,
+"line": 0,
 "path": "res://Player/Scripts/player_state.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 57,
+"line": 39,
 "path": "res://Player/Scripts/player.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 14,
+"line": 0,
 "path": "res://Player/Scripts/player_idle.gd",
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 33,
+"line": 0,
 "path": "res://Player/Scripts/player_fall.gd",
 "type": "file"
 }, {
@@ -101,9 +123,28 @@ project/editorState=[{
 "line": 38,
 "path": "res://Player/Scripts/player_crouch.gd",
 "type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://General/Scripts/LevelBounds.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 41,
+"path": "res://General/Level_Transition/level_transition.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 25,
+"path": "res://00_global/scene_manager/scene_manager.gd",
+"type": "file"
 }]
 project/breakpoints={
+"res://00_global/scene_manager/scene_manager.gd": PackedInt32Array(),
+"res://General/Scripts/LevelBounds.gd": PackedInt32Array(),
 "res://Player/Scripts/player.gd": PackedInt32Array(),
 "res://Player/Scripts/player_crouch.gd": PackedInt32Array(),
 "res://player_idle.gd": PackedInt32Array()
 }
+project/disabled_breakpoints={}
