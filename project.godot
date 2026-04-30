@@ -131,12 +131,12 @@ project/editorState=[{
 }, {
 "column": 0,
 "current": true,
-"line": 41,
+"line": 89,
 "path": "res://General/Level_Transition/level_transition.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 25,
+"line": 21,
 "path": "res://00_global/scene_manager/scene_manager.gd",
 "type": "file"
 }]
