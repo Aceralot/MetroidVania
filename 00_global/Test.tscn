@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1u2ovdha4cwl"]
+
+[ext_resource type="PackedScene" uid="uid://dscj5nk8vgo61" path="res://00_global/fade.tscn" id="1_oq5t3"]
+
+[node name="Test" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 57.0
+text = "Development Stage:
+Version 1.0"
+
+[node name="Fade" parent="." instance=ExtResource("1_oq5t3")]
