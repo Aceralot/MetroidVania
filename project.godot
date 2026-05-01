@@ -20,8 +20,8 @@ config/features=PackedStringArray("4.5", "Mobile")
 
 [autoload]
 
-SceneManager="*res://00_global/scene_manager/scene_manager.gd"
 Test="*res://00_global/Test.tscn"
+SceneManager="*res://00_global/scene_manager/scene_manager.tscn"
 
 [display]
 
@@ -32,6 +32,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 player=""
+SceneManager=""
 
 [input]
 
@@ -127,13 +128,13 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
+"current": true,
 "line": 0,
 "path": "res://General/Level_Transition/level_transition.gd",
 "type": "file"
 }, {
-"column": 0,
-"current": true,
-"line": 10,
+"column": 21,
+"line": 39,
 "path": "res://00_global/scene_manager/scene_manager.gd",
 "type": "file"
 }]

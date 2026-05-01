@@ -28,7 +28,7 @@ target_area_name = "Level_Transition2"
 
 [node name="LevelBounds" type="Node2D" parent="."]
 z_index = 256
-position = Vector2(-39, -47)
+position = Vector2(-39, -82)
 script = ExtResource("3_4e3vy")
 width = 1184
 height = 654

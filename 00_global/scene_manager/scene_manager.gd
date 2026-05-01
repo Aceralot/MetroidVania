@@ -4,8 +4,8 @@ signal load_scene_started
 signal new_scene_ready( target_name : String, offset : Vector2 )
 signal load_scene_finished
 
-
 @onready var fade: Control = $Fade
+
 
 func _ready() -> void:
 	fade.visible = false
@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func transition_scene( new_scene : String, target_area : String, player_offset : Vector2, dir : String  ) -> void:
 	
+	get_tree().paused = true
 	var fade_pos : Vector2 = get_fade_pos( dir )
 	
 	fade.visible = true
@@ -35,7 +36,9 @@ func transition_scene( new_scene : String, target_area : String, player_offset :
 	new_scene_ready.emit( target_area, player_offset )
 	
 	#fade New Scene In
-	
+	await fade_screen( Vector2.ZERO, -fade_pos )
+	fade.visible = false
+	get_tree().paused = false
 	load_scene_finished.emit()
 	
 	

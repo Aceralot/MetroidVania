@@ -17,7 +17,8 @@ fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[node name="SceneMangager" type="CanvasLayer"]
+[node name="SceneMangager" type="CanvasLayer" groups=["SceneManager"]]
+process_mode = 3
 script = ExtResource("1_4wb0k")
 
 [node name="Fade" type="Control" parent="."]

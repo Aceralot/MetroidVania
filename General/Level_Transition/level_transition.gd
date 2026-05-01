@@ -5,6 +5,7 @@ class_name LevelTransition extends Node2D
 enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 
+
 @export_range(2, 12, 1, "or_greater" ) var size : int = 2 :
 	set( value ):
 		size = value
@@ -31,7 +32,7 @@ func _ready() -> void:
 
 func _on_player_entered( _n : Node2D ) -> void:
 	#Transistion the Attached level
-	SceneManager.transition_scene( target_level, target_area_name, get_offset( _n ), "left"  )
+	SceneManager.transition_scene( target_level, target_area_name, get_offset( _n ), get_transition_direction()  )
 	pass
 
 
@@ -92,5 +93,17 @@ func  get_offset( player : Node2D ) -> Vector2:
 	
 	return offset
 
+
+func get_transition_direction() -> String:
+	match location:
+		SIDE.LEFT:
+			return "left"
+		SIDE.RIGHT:
+			return "right"
+		SIDE.TOP:
+			return "up"
+		_:
+			return "down"
+	
 
 
